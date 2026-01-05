@@ -49,9 +49,18 @@ function Hub() {
         const response = await fetch(`https://api.github.com/users/${GITHUB_OWNER}/repos?sort=updated&per_page=20`)
         if (!response.ok) throw new Error('Failed to fetch repositories')
         const data = await response.json()
+        // Repos to exclude (profile readme, this app, etc.)
+        const excludedRepos = ['bahcate06', 'duck_compiler']
+        // Languages that indicate web apps or complex projects
+        const excludedLanguages = ['typescript', 'html', 'css', 'vue', 'svelte']
+
         setRepositories(
           data
-            .filter((repo: { name: string }) => repo.name.toLowerCase() !== 'bahcate06')
+            .filter((repo: { name: string; language: string | null }) => {
+              const nameExcluded = excludedRepos.includes(repo.name.toLowerCase())
+              const langExcluded = repo.language && excludedLanguages.includes(repo.language.toLowerCase())
+              return !nameExcluded && !langExcluded
+            })
             .map((repo: { name: string; description: string | null; language: string | null }) => ({
               name: repo.name,
               description: repo.description,
