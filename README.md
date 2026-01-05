@@ -10,10 +10,10 @@
 ```
 
 ```
-    __
+__
   >(o )___
    ( ._> /
-    `---'   ~ compile code, the duck way ~
+                                    `---'   ~ compile code, the duck way ~
 ```
 
 </div>
