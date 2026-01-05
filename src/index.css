@@ -1,0 +1,88 @@
+/* Gruvbox Dark Palette */
+:root {
+  /* Background colors */
+  --bg-hard: #1d2021;
+  --bg: #282828;
+  --bg-soft: #32302f;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+
+  /* Foreground colors */
+  --fg: #ebdbb2;
+  --fg0: #fbf1c7;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+
+  /* Accent colors */
+  --red: #fb4934;
+  --green: #b8bb26;
+  --yellow: #fabd2f;
+  --blue: #83a598;
+  --purple: #d3869b;
+  --aqua: #8ec07c;
+  --orange: #fe8019;
+  --gray: #928374;
+
+  /* Dark accent variants */
+  --red-dark: #cc241d;
+  --green-dark: #98971a;
+  --yellow-dark: #d79921;
+  --blue-dark: #458588;
+  --purple-dark: #b16286;
+  --aqua-dark: #689d6a;
+  --orange-dark: #d65d0e;
+
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--fg);
+  background-color: var(--bg-hard);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-hard);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background-color: var(--bg3);
+  color: var(--fg0);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg4);
+}
